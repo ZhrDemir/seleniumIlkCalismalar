@@ -2,6 +2,7 @@ package day03_locators;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
@@ -20,7 +21,8 @@ public class C03_ByLinkText_ByPartialLinkText {
 
         //shous linine tıklayın
        // driver.findElement(By.linkText("Shoes")).click();
-        driver.findElement(By.partialLinkText("Sho")).click();
+        WebElement shoesLinki = driver.findElement(By.partialLinkText("Sho"));
+        shoesLinki.click();
 
         // acılan sayfada Title in Shoes içerdiğini test edin
         String expectedTitleIcerik = "Shoes";
@@ -29,6 +31,14 @@ public class C03_ByLinkText_ByPartialLinkText {
         if (actuelTitle.contains(expectedTitleIcerik)){
             System.out.println("Shoes testi PASSED");
         }else System.out.println("Shoes testi FAİLED");
+
+        // Shoes linkinin bu sayfadada erişilebilir olduğunu test edin
+
+        shoesLinki = driver.findElement(By.partialLinkText("Sho"));
+        if (shoesLinki.isEnabled()){
+            System.out.println("Shoes linki erişim testi Passed");
+
+        }else System.out.println("Failed");
 
 
         driver.quit();
