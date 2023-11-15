@@ -10,7 +10,16 @@ public class C03_getMethodlari {
         WebDriver driver=new ChromeDriver();
         driver.manage().window().maximize();
 
+        driver.get("https://www.testotomasyonu.com");
+        Thread.sleep(1000);
 
+        //System.out.println(driver.getPageSource());//tüm kodları gönderdi
+
+        System.out.println(driver.getWindowHandle());//selenium un oluşturduğu her webdriver objesine verdiği unique
+        // bir koddur.sayfalar arası geçiş yaparken kullanıcaz .
+
+        System.out.println(driver.getWindowHandles()); // test sırasında driver dirden fazla window açtıysa
+        // bir set olarak açılan tüm windowların handle değerlerini döndürür
 
 
 
