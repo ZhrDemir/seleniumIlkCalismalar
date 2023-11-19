@@ -47,9 +47,9 @@ public class C01_Xpath {
         //Remove butonunun görünür olmadığını test edin
 try {
     removeElementi = driver.findElement(By.xpath("//button[@class='remove-btn']"));
-    System.out.println("Remove butonu görünmeme testi PASSED");
+    System.out.println("Remove butonu görünmeme testi FAİLD");
 }catch (NoSuchElementException e){
-    System.out.println("Remove butonu görünmeme testi Failed");
+    System.out.println("Remove butonu görünmeme testi Passed");
     driver.quit();
 }
 
